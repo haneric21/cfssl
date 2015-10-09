@@ -43,6 +43,7 @@ func TestServe(t *testing.T) {
 	// Enabled endpoints should return '405 Method Not Allowed'
 	expected[v1APIPath("init_ca")] = http.StatusMethodNotAllowed
 	expected[v1APIPath("newkey")] = http.StatusMethodNotAllowed
+	expected[v1APIPath("certinfo")] = http.StatusMethodNotAllowed
 
 	// POST-only endpoints should return '400 Bad Request'
 	expected[v1APIPath("scan")] = http.StatusBadRequest
